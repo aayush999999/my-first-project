@@ -43,6 +43,7 @@ def reg(request):
             messages.success(request, 'Password too short')
             return render(request, 'reg.html', )
 
+
         # myuser = Registration.objects.create_registration(name, password)
         # myuser.save()
         # myuser=Registration(name=name,password=password)
