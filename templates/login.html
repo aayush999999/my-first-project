@@ -2,5 +2,52 @@
 
 {% block title %}Login{% endblock title %}
 
-{% block body %}This is Login Protal{% endblock body %}
+{% block body %}
+
+
+{% comment %} <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head> {% endcomment %}
+
+  <body class="text-center" >
+    <form class="form-signin" method="post" action="/login">
+        {% csrf_token %}
+      <img class="mb-4" src="https://cdn.dribbble.com/users/2948332/screenshots/5926397/media/97472cb011b51f566f0ab93c11d967d1.jpg?resize=768x576&vertical=center" alt="" style="border-radius:20px" width="200" height="200">
+      <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
+
+      <label for="name" class="sr-only">name</label>
+      <input type="text" id="email" name="email" class="form-control"  placeholder="username" required autofocus>
+
+      <label for="password" class="sr-only">Password</label>
+      <input type="text" id="password" name="password" class="form-control" placeholder="Password" required>
+      <br>
+      {% comment %} <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div> {% endcomment %}
+      <button class="btn btn-lg btn-primary btn-block"  style="border-radius:11px" type="submit">Login</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+    </form>
+  </body>
+{% comment %} </html> {% endcomment %}
+
+
+{% endblock body %}
 

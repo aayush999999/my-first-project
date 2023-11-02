@@ -1,18 +1,19 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Registration
-# from django.contrib.auth.models import Registration
+# from django.contrib.auth.models import User
 from django.contrib import messages
-from django.core.exceptions import ValidationError
+# from django.core.exceptions import ValidationError
+from django.contrib.auth import authenticate,login,logout
 
 
 # Create your views here.
-def index(request):
+def homepage(request):
     context={
         'variable1':"This is sent",
         'variable2':"Aayush"
     }
-    return render(request, 'index.html', context)
+    return render(request, 'homepage.html', context)
     #return HttpResponse("this is homepage")
 
 def about(request):
@@ -55,15 +56,28 @@ def reg(request):
         # context["name"] = name
 
         messages.success(request,"Successfully Registered")
-        
+        return redirect ('login')
 
     return render(request, 'reg.html', ) #context=context
     #return HttpResponse("this is services page")
 
 
 def login(request):
-    return render(request, 'login.html')
+    if request.method == "POST":
+        email =request.POST.get('email')
+        password =request.POST.get('password')
+        print(request.POST) 
+        User=authenticate(request,email=email,password=password) 
+        if User is not None:
+            login(request,User)
+            return redirect('about')
+        else:
+            messages.warning(request,"Username or Password is incorrect!!")
+
+    return render(request, 'logout.html')
 
  
-# def logout(request):
-#     pass
+def logout(request):
+    User=authenticate
+    logout(request,User)
+    return render(request, 'homepage.html')
