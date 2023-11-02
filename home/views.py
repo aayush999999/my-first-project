@@ -74,7 +74,7 @@ def login(request):
         else:
             messages.warning(request,"Username or Password is incorrect!!")
 
-    return render(request, 'logout.html')
+    return render(request, 'login.html')
 
  
 # def logout(request):
@@ -83,5 +83,6 @@ def login(request):
 #     return render(request, 'homepage.html')
 
 
-def logout_view(request):
-    logout(request) 
+def logout(request):
+    pass
+    #logout(request) 
