@@ -77,7 +77,11 @@ def login(request):
     return render(request, 'logout.html')
 
  
-def logout(request):
-    User=authenticate
-    logout(request,User)
-    return render(request, 'homepage.html')
+# def logout(request):
+#     User=authenticate
+#     logout(request,User)
+#     return render(request, 'homepage.html')
+
+
+def logout_view(request):
+    logout(request) 
