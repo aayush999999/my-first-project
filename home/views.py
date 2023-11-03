@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate,login,logout
 
 
 # Create your views here.
+
 def homepage(request):
     context={
         'variable1':"This is sent",
@@ -85,4 +86,11 @@ def login(request):
 
 def logout(request):
     pass
-    #logout(request) 
+    logout(request) 
+
+
+
+
+
+def stock(request):
+    return render(request,'stock.html')
