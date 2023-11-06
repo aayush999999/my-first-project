@@ -1,135 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>:: Stock Details ::</title>
-<style type="text/css">
-<!--
-.style1 {
-	font-family:"Courier New", Courier, monospace;
-	font-size: 18px;
-	color: #772600;
-	font-weight: bold;
-	text-decoration:underline;
-	}
-.style22 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; }
-.styletc {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; text-decoration:none; }
-.style23 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; }
-.styleerr {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px;  color:#FF0000; }
-.style24 {color: #FF0000}
-.linkstyle1 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	font-weight: bold;
-	color: #CA0000;
-}
-.linkstyle2 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	text-decoration:none; color: #FFFFFF;
-}
-.linkstyle3 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	text-decoration:none; color: black;
-}
-body {font-family:Comic sans MS,Verdana, Arial, Helvetica, sans-serif;font-size:10pt;	margin:30px;background-color:#D6D6D6;}
--->
-</style>
-<SCRIPT language="javascript">
-<!--
-function popup(mylink, windowname)
-{
-if (! window.focus)return true;
-var href;
-if (typeof(mylink) == 'string')
-   href=mylink;
-else
-   href=mylink.href;
-window.open(href, windowname, 'resizable=yes,toolbar=yes,scrollbars=yes,menubar=yes,width=800,height=600');
-return false;
-}
--->
-</SCRIPT>
+{% extends "navbar.html" %}
 
-<script language="javascript" src="js/validation.js"></script>
-</head>
+{% block title %}STOCK DETAILS{% endblock title %}
 
-<body>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="20%" height="40" align="left" valign="center" bgcolor="#53868B">
-        &nbsp;&nbsp;&nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp;<a href='#' onclick="window.print();" class="linkstyle2">PRINT</a>&nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp;<a href='Export.php' class="linkstyle2">EXPORT</a>&nbsp;&nbsp;<strong>|</strong>
-</td>
-    <td width="60%"  height="40" align="center" valign="center" bgcolor="#53868B">
-&nbsp;&nbsp;<strong><span class="linkstyle1">STOCK DETAILS</span></strong>
-</td>
-    <td width="20%" height="40" align="right" valign="center" bgcolor="#53868B">
-&nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp;<a href='/' class="linkstyle2">HOME</a>&nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-</td>
-  
-  </tr>
-</table>
+{% block body %}
 
-<table width="100%" border="0" cellspacing="1" cellpadding="1">
-  <tr>
-    <td colspan="8" align="left"><span class="styleerr"></span></td>
-  </tr>
-   <tr>
-     <td colspan="8">
-	 <div>&nbsp;</div>
-<table width="100%" border="1" cellpadding="2" cellspacing="0" bordercolor="#000000" style="border-collapse:collapse" align="center">
-  <tr>
-    
-    <td width="7%" align="center" bgcolor="#DFDFDF" class="style23">Item Code</td>
-    <td width="7%" align="center" bgcolor="#DFDFDF" class="style23">Item Group</td>
-	<td width="7%" align="center" bgcolor="#DFDFDF" class="style23">Image</td>
-    <td width="7%" align="center" bgcolor="#DFDFDF" class="style23">Item Description</td>
-    <td width="7%" align="center" bgcolor="#DFDFDF" class="style23">Stock Qty.</td>
-    <td width="7%" align="center" bgcolor="#DFDFDF" class="style23">Price</td>
-    <td width="7%" align="center" bgcolor="#DFDFDF" class="style23">Action</td>
-    
-  </tr>
-<form name="form1" id="form1" method="post" action="">
-  <tr bgcolor="#A2CD5A">
-    
-    <td align="center" class="style22"><input type="text" name="pmno" id="pmno" style="width:100px;" maxlength="100" tabindex="1" value=""/></td>
-    <td align="center" class="style22">
-        <select name="cat" id="cat" tabindex="3">
-        {% comment %} <option value=""></option> {% endcomment %}
-            <option value="">Select</option>
-		    <option value="Electrical">Electrical</option>
-		    <option value="Grocery">Grocery</option>
-            <option value="Appliance">Appliance</option>
-            <option value="Furniture">Furniture</option>
-            <option value="Fashion">Fashion</option>
-            <option value="Toy">Toy</option>
-            <option value="Mobiles">Mobiles</option>
-            <option value="Electronic">Electronic</option>
-	</select></td>
+<table class="table">
+    <thead class="thead-default">
+        <tr>
+            <th>S.No.</th>
+            <th>Item Group</th>
+            <th>Item Description</th>
+            <th>Stock Quantity</th>
+            <th>Item Rate</th>
+        </tr>
+    </thead>
 
-    <td align="center" class="style22"></td>
-	<td align="center" class="style22">&nbsp;<input type="text" name="unit" id="unit" style="width:240px;" maxlength="100" tabindex="2" value=""/></td>
-    <td align="center" class="style22"><input type="text" name="r4" id="r4" size=10 value=""/></td>
-    <td align="center" class="style22"><input type="text" name="r5" id="r5" size=10 value=""/></td>
-    
+    <tbody>
+    {% for i in item %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.item_group}}</td>
+            <td>{{i.item_desc}}</td>
+            <td>{{i.stock_qty}}</td>
+            <td>{{i.item_rate}}</td>
+        </tr>
+    {%endfor%}
 
 
-    <td align="center"><input type="submit" name="S1" id="S1" value="SUBMIT" tabindex="7"  /></td>
-  </tr>
-</form>
-
-</table>
-</td>
-    </tr>
-    <tr>
-     <td>&nbsp;</td>
-     <td colspan="4">&nbsp;</td>
-     <td colspan="2">&nbsp;</td>
-     <td>&nbsp;</td>
-   </tr>
-</table>
-
-
-</body>
-</html>
+{% endblock body %}

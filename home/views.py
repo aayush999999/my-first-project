@@ -98,11 +98,18 @@ def stock(request):
 
 
 # 6.11.23
-def item(request):
-    all_objects = ItemInsert.objects.all()
-    #print(all_objects)
-    for it in all_objects:
-        print(it.item_name)
-    params = {'all_its':all_objects}
-    return render(request,'seller.html',params)
+
+# def item(request):
+#     all_objects = ItemInsert.objects.all()
+#     #print(all_objects)
+#     for it in all_objects:
+#         print(it.item_name)
+#     params = {'all_its':all_objects}
+#     return render(request,'seller.html',params)
     
+
+def stock(request):
+    items = ItemInsert.objects.all()
+    # print(items)
+    params = {'item':items}
+    return render(request,'stock.html',params)
