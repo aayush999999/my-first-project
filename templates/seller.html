@@ -1,0 +1,28 @@
+{% extends "navbar.html" %}
+
+{% block title %}SELLER{% endblock title %}
+
+{% block body %}
+
+<table class="table">
+    <thead class="thead-default">
+        <tr>
+            <th>Item Group</th>
+            <th>Item Description</th>
+            <th>Stock Quantity</th>
+            <th>Item Rate</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for it in all_its%}
+        <tr>
+            <td>{{it.item_group}}</td>
+            <td>{{it.item_desc}}</td>
+            <td>{{it.stock_qty}}</td>
+            <td>{{it.item_rate}}</td>
+        </tr>
+    {%endfor%}
+
+
+{% endblock body %}

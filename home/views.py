@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
-from home.models import Registration
+from home.models import Registration,ItemInsert
 # from django.contrib.auth.models import User
 from django.contrib import messages
 # from django.core.exceptions import ValidationError
@@ -94,3 +94,15 @@ def logout(request):
 
 def stock(request):
     return render(request,'stock.html')
+
+
+
+# 6.11.23
+def item(request):
+    all_objects = ItemInsert.objects.all()
+    #print(all_objects)
+    for it in all_objects:
+        print(it.item_name)
+    params = {'all_its':all_objects}
+    return render(request,'seller.html',params)
+    
