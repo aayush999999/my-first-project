@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
-from home.models import Registration
+from home.models import Registration,ItemInsert
 # from django.contrib.auth.models import User
 from django.contrib import messages
 # from django.core.exceptions import ValidationError
@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate,login,logout
 
 
 # Create your views here.
+
 def homepage(request):
     context={
         'variable1':"This is sent",
@@ -85,5 +86,29 @@ def login(request):
 
 
 def logout(request):
+<<<<<<< HEAD
     # pass
     logout(request) 
+=======
+    pass
+    logout(request) 
+
+
+
+
+
+def stock(request):
+    return render(request,'stock.html')
+
+
+
+# 6.11.23
+def item(request):
+    all_objects = ItemInsert.objects.all()
+    #print(all_objects)
+    for it in all_objects:
+        print(it.item_name)
+    params = {'all_its':all_objects}
+    return render(request,'seller.html',params)
+    
+>>>>>>> 585e495ce52e5cc344a69dcb06d7ffcbcb1a1c6b
