@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 
 
+
 # Create your views here.
 def homepage(request):
     context={
@@ -74,7 +75,7 @@ def login(request):
         else:
             messages.warning(request,"Username or Password is incorrect!!")
 
-    return render(request, 'login.html')
+    return render(request, 'logout.html')
 
  
 # def logout(request):
@@ -84,5 +85,5 @@ def login(request):
 
 
 def logout(request):
-    pass
-    #logout(request) 
+    # pass
+    logout(request) 
