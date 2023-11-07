@@ -100,13 +100,14 @@ def stock(request):
  
 
 
+
 # 6.11.23
 def seller(request):
     # all_objects = ItemInsert.objects.all()
     # #print(all_objects)
     # for it in all_objects:
     #     print(it.item_name)
-    # params = {'all_its':all_objects}
+    # params = {'all_its':all_objects}  
     # return render(request,'seller.html',params)
     
     items = ItemInsert.objects.all()
