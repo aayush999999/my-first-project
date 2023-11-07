@@ -1,30 +1,68 @@
 {% extends "navbar.html" %}
-
+{% load static %}
 {% block title %}STOCK DETAILS{% endblock title %}
 
 {% block body %}
 
-<table class="table">
-    <thead class="thead-default">
-        <tr>
-            <th>S.No.</th>
-            <th>Item Group</th>
-            <th>Item Description</th>
-            <th>Stock Quantity</th>
-            <th>Item Rate</th>
-        </tr>
-    </thead>
+<ul class="carousel-indicators" >
+<li data-target="#demo" data-slide-to="0" class="active"></li>
+<li data-target="#demo" data-slide-to="1"></li>
+<li data-target="#demo" data-slide-to="2"></li>
+</ul>
+{% comment %} {% for i in item %} {% endcomment %}
+    <!-- Slideshow start here -->
+    <div class="container carousel-inner  no-padding">
+      <div class="carousel-item active">
 
-    <tbody>
-    {% for i in item %}
-        <tr>
-            <td>{{i.id}}</td>
-            <td>{{i.item_group}}</td>
-            <td>{{i.item_desc}}</td>
-            <td>{{i.stock_qty}}</td>
-            <td>{{i.item_rate}}</td>
-        </tr>
-    {%endfor%}
+        <div class="col-xs-3 col-sm-3 cl-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-xs-3 col-sm-3 cl-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 cl-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 cl-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+         
+      </div>
+    </div>
+  
+
+
+{% comment %} {%endfor%} {% endcomment %}
 
 {% endblock body %}

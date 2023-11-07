@@ -102,15 +102,6 @@ def stock(request):
 
 
 # 6.11.23
-<<<<<<< HEAD
-def item(request):
-    all_objects = ItemInsert.objects.all()
-    #print(all_objects)
-    for it in all_objects:
-        print(it.item_name)
-    params = {'all_its':all_objects}
-    return render(request,'seller.html',params)
-=======
 def stock(request):
     # all_objects = ItemInsert.objects.all()
     # #print(all_objects)
@@ -133,7 +124,6 @@ def stock(request):
 
         params = {'allitems':allitems}
         return render(request, 'stock.html', params)
->>>>>>> a27a277d6cf82f1ffbb3741702ac6e712588c0f6
 
 
     
