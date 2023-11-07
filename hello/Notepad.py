@@ -1,4 +1,4 @@
-# pass1 to pass2 match 
+# password 1 to password 2 matching 
 
 # if pass1!=pass2:
 #     return HttpResponse("message")

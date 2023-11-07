@@ -125,3 +125,5 @@ def stock(request):
         params = {'allitems':allitems}
         return render(request, 'stock.html', params)
 
+
+    
