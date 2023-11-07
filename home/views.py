@@ -102,7 +102,7 @@ def stock(request):
 
 
 # 6.11.23
-def seller(request):
+def stock(request):
     # all_objects = ItemInsert.objects.all()
     # #print(all_objects)
     # for it in all_objects:
@@ -110,8 +110,18 @@ def seller(request):
     # params = {'all_its':all_objects}  
     # return render(request,'seller.html',params)
     
-    items = ItemInsert.objects.all()
+    # items = ItemInsert.objects.all()
     # print(items)
-    params = {'item': items}
-    return render(request, 'seller.html', params)
+    # params = {'item': items}
+    # return render(request, 'seller.html', params)
+    allitems = []
+    itemgrps = ItemInsert.objects.values('item_group','id')
+    grps ={item['item_group'] for item in itemgrps}
+    for grp in grps:
+        itm = ItemInsert.objects.filter(item_group=grp)
+        n = len(itm)
+        allitems.append([itm, range(1,n),n])
+
+        params = {'allitems':allitems}
+        return render(request, 'stock.html', params)
 
