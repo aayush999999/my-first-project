@@ -5,7 +5,7 @@ from home.models import Registration,ItemInsert
 from django.contrib import messages
 # from django.core.exceptions import ValidationError
 from django.contrib.auth import authenticate,login
-
+from math import ceil
 
 
 # Create your views here.
@@ -95,35 +95,44 @@ def login(request):
 
 
 
-def stock(request):
-    return render(request,'stock.html')
+# def stock(request):
+#     return render(request,'stock.html')
  
 
 
 
 # 6.11.23
-def stock(request):
-    # all_objects = ItemInsert.objects.all()
+def stock(request): 
+    items = ItemInsert.objects.all()
+        # print(items)
+    n= len(items)
+    nSlides= n//4 + ceil((n/4)-(n//4))
+    allitems=[[items, range(1, len(items)), nSlides],[items, range(1, len(items)), nSlides]]
+    params = {'allitems': allitems}
+    return render(request, 'stock.html', params)
+
+# all_objects = ItemInsert.objects.all()
     # #print(all_objects)
     # for it in all_objects:
     #     print(it.item_name)
     # params = {'all_its':all_objects}  
     # return render(request,'seller.html',params)
     
-    # items = ItemInsert.objects.all()
-    # print(items)
-    # params = {'item': items}
-    # return render(request, 'seller.html', params)
-    allitems = []
-    itemgrps = ItemInsert.objects.values('item_group','id')
-    grps ={item['item_group'] for item in itemgrps}
-    for grp in grps:
-        itm = ItemInsert.objects.filter(item_group=grp)
-        n = len(itm)
-        allitems.append([itm, range(1,n),n])
+    # itemgrps = ItemInsert.objects.values('item_group','id')
+    # grps ={item['item_group'] for item in itemgrps}
+    # for grp in grps:
+    #     itm = ItemInsert.objects.filter(item_group=grp)
+    #     n = len(itm)
+    #     allitems.append([itm, range(1,n),n])
 
-        params = {'allitems':allitems}
-        return render(request, 'stock.html', params)
+    # params = {'allitems':allitems}
+    # return render(request, 'stock.html', params)
 
 
-    
+    # products= Product.objects.all()
+    #     n= len(products)
+    #     nSlides= n//4 + ceil((n/4)-(n//4))
+    #     allProds=[[products, range(1, len(products)), nSlides],[products, range(1, len(products)), nSlides]]
+    #     params={'allProds':allProds }
+    #     return render(request,"shop/index.html", params)
+        
