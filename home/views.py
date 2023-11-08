@@ -6,6 +6,7 @@ from django.contrib import messages
 # from django.core.exceptions import ValidationError
 from django.contrib.auth import authenticate,login
 from math import ceil
+from . models import ItemInsert
 
 
 # Create your views here.
@@ -104,35 +105,7 @@ def login(request):
 # 6.11.23
 def stock(request): 
     items = ItemInsert.objects.all()
-        # print(items)
     n= len(items)
-    nSlides= n//4 + ceil((n/4)-(n//4))
-    allitems=[[items, range(1, len(items)), nSlides],[items, range(1, len(items)), nSlides]]
-    params = {'allitems': allitems}
+    nSlides= n//4 + ceil((n/4) + (n//4))
+    params = {'no_of_slides':nSlides, 'range': range(1,nSlides),'item':items}
     return render(request, 'stock.html', params)
-
-# all_objects = ItemInsert.objects.all()
-    # #print(all_objects)
-    # for it in all_objects:
-    #     print(it.item_name)
-    # params = {'all_its':all_objects}  
-    # return render(request,'seller.html',params)
-    
-    # itemgrps = ItemInsert.objects.values('item_group','id')
-    # grps ={item['item_group'] for item in itemgrps}
-    # for grp in grps:
-    #     itm = ItemInsert.objects.filter(item_group=grp)
-    #     n = len(itm)
-    #     allitems.append([itm, range(1,n),n])
-
-    # params = {'allitems':allitems}
-    # return render(request, 'stock.html', params)
-
-
-    # products= Product.objects.all()
-    #     n= len(products)
-    #     nSlides= n//4 + ceil((n/4)-(n//4))
-    #     allProds=[[products, range(1, len(products)), nSlides],[products, range(1, len(products)), nSlides]]
-    #     params={'allProds':allProds }
-    #     return render(request,"shop/index.html", params)
-        
