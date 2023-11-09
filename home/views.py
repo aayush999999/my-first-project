@@ -6,7 +6,6 @@ from django.contrib import messages
 # from django.core.exceptions import ValidationError
 from django.contrib.auth import authenticate,login
 from math import ceil
-from . models import ItemInsert
 
 
 # Create your views here.
@@ -46,14 +45,7 @@ def reg(request):
         if len(password) < 6:
             messages.success(request, 'Password too short')
             return render(request, 'reg.html', )
-
-
-        # myuser = Registration.objects.create_registration(name, password)
-        # myuser.save()
-        # myuser=Registration(name=name,password=password)
-        # contact = Registration(name=name,password=password,date=datetime.today())
-        # contact.save()
-
+        
         Registration.objects.create(name=name,password=password,date=datetime.today())
 
         # context["name"] = name
@@ -62,7 +54,7 @@ def reg(request):
         return redirect ('login')
 
     return render(request, 'reg.html' ) #context=context
-    #return HttpResponse("this is services page")
+
 
 
 def login(request):
@@ -86,26 +78,29 @@ def login(request):
 #     return render(request, 'homepage.html')
 
 
-# def logout(request):
-# <<<<<<< HEAD
-#     # pass
-#     logout(request) 
-# =======
-#     pass
-#     logout(request) 
 
 
-
-# def stock(request):
-#     return render(request,'stock.html')
- 
-
-
-
-# 6.11.23
+#   Stock Display
 def stock(request): 
-    items = ItemInsert.objects.all()
-    n= len(items)
-    nSlides= n//4 + ceil((n/4) + (n//4))
-    params = {'no_of_slides':nSlides, 'range': range(1,nSlides),'item':items}
+    # iteminserts = ItemInsert.objects.all()
+    # n = len(iteminserts)
+    # nSlides= n//4 + ceil((n/4) - (n//4))
+
+    allitems = []
+    descitems = ItemInsert.objects.values('item_desc')
+    descs = {item['item_desc'] for item in descitems }
+    for desc in descs:
+        itm = ItemInsert.filter( item_desc = desc).values(desc)
+        n = len(itm)
+        nSlides= n//4 + ceil((n/4) - (n//4))
+        allitems.append([itm, range(1, nSlides), nSlides])
+
+    params = {'allitems':allitems}
     return render(request, 'stock.html', params)
+
+
+
+
+
+def seller(request):
+    return render(request, 'seller.html')

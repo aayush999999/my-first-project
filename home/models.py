@@ -14,7 +14,7 @@ class Registration(models.Model):
 
 
 
-class ItemInsert(models.Model):
+class ItemInsert(models.Model): 
     item_group = models.CharField(max_length=30)
     item_desc = models.CharField(max_length=30)
     stock_qty = models.IntegerField()
@@ -24,4 +24,4 @@ class ItemInsert(models.Model):
 
     def __str__(self):
         return self.item_desc
-    
+      

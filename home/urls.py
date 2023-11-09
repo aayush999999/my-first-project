@@ -10,6 +10,6 @@ urlpatterns = [
     path("login", views.login, name='login'),
     # path("logout", views.logout, name='logout'),
     path("stock", views.stock, name='stock'),
-    # path("seller", views.seller, name='seller'),
+    path("seller", views.seller, name='seller'),
 ]
 
