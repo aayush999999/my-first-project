@@ -87,10 +87,12 @@ def stock(request):
     # nSlides= n//4 + ceil((n/4) - (n//4))
 
     allitems = []
+
     descitems = ItemInsert.objects.values('item_desc')
+    print(descitems)
     descs = {item['item_desc'] for item in descitems }
     for desc in descs:
-        itm = ItemInsert.filter( item_desc = desc).values(desc)
+        itm = ItemInsert.objects.filter( item_desc = desc)
         n = len(itm)
         nSlides= n//4 + ceil((n/4) - (n//4))
         allitems.append([itm, range(1, nSlides), nSlides])
