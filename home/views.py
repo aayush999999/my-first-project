@@ -105,4 +105,5 @@ def stock(request):
 
 
 def seller(request):
-    return render(request, 'seller.html')
+    item=ItemInsert.objects.all()
+    return render(request, 'seller.html',{'item':item})

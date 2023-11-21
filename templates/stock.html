@@ -71,7 +71,7 @@
           <div class="card-body">
               <h5 class="card-title">{{product.0.item_desc}}</h5>
               <p class="card-text">{{product.0.item_group}}</p>
-              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <button id="item{{product.0.id}}" class="btn btn-primary cart">Add to Cart</button>
           </div>
         </div>
      </div>
@@ -84,7 +84,7 @@
           <div class="card-body">
             <h5 class="card-title">{{product.item_desc}}</h5>
             <p class="card-text">{{product.item_group}} </p>
-            <a href="#" class="btn btn-primary">Add To Cart</a>
+            <button id="item{{i.id}}" class="btn btn-primary cart">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -100,12 +100,12 @@
 </div>
 </div>
   <!-- left and right controls for the slide -->
-  <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+  {% comment %} <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
   </a>
   <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
       <span class="carousel-control-next-icon"></span>
-  </a>
+  </a> {% endcomment %}
   {% endfor %}
 </div>
 
@@ -129,6 +129,17 @@
   $('.cart').click(function(){
   
   console.log('clicked');
+  var idstr = this.id.toString();
+  console.log(idstr);
+  if (cart[idstr] !=undefined){
+    cart[idstr] = cart[idstr] + 1;
+  }
+  else
+  {
+    cart[idstr] = 1;
+  }
+  console.log(cart);
+  localStorage.setItem('cart',JSON.stringify(cart));
   });
 </script>
 
