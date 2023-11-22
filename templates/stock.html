@@ -50,13 +50,13 @@
 <div class="container">
 
   <!--Slideshow starts here -->
-  {% for product, range, nSlides in allProds %}
-  <h5 class="my-4">Flash Sale On {{product.0.category}} - Recommended Items</h5>
+  {% for product, range, nSlides in allitems %}
+  <h5 class="my-4">Sale On <b>{{product.0.item_desc}}</b> - Recommended Items</h5>
 <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
 
-     {% for i in range %}
+    {% for i in range %}
     <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}" ></li>
     {% endfor %}
   </ul>
@@ -69,8 +69,8 @@
         <div class="card" style="width: 18rem;">
           <img src='/media/{{product.0.image}}' class="card-img-top" alt="...">
           <div class="card-body">
-              <h5 class="card-title">{{product.0.product_name}}</h5>
-              <p class="card-text">{{product.0.desc}}</p>
+              <h5 class="card-title">{{product.0.item_desc}}</h5>
+              <p class="card-text">{{product.0.item_group}}</p>
               <a href="#" class="btn btn-primary">Add to Cart</a>
           </div>
         </div>
@@ -82,8 +82,8 @@
         <div class="card" style="width: 18rem;">
           <img src='/media/{{i.image}}' class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{i.product_name}}</h5>
-            <p class="card-text">{{i.desc}}</p>
+            <h5 class="card-title">{{i.item_desc}}</h5>
+            <p class="card-text">{{i.item_group }}</p>
             <a href="#" class="btn btn-primary">Add To Cart</a>
           </div>
         </div>
@@ -100,14 +100,21 @@
 </div>
 </div>
   <!-- left and right controls for the slide -->
-  <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+  {% comment %} <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
   </a>
   <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
       <span class="carousel-control-next-icon"></span>
-  </a>
+  </a> {% endcomment %}
   {% endfor %}
 </div>
+
+<script>
+
+  console.log(working);
+  
+
+</script>
 
 
 

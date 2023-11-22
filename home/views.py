@@ -1,11 +1,14 @@
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Registration,ItemInsert
-# from django.contrib.auth.models import User
 from django.contrib import messages
-# from django.core.exceptions import ValidationError
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from math import ceil
+
+# from django.contrib.auth.models import User
+# from django.core.exceptions import ValidationError
+
+
 
 
 # Create your views here.
@@ -59,8 +62,8 @@ def reg(request):
 
 def login(request):
     if request.method == "POST":
-        email =request.POST.get('email')
-        password =request.POST.get('password')
+        email=request.POST.get('email')
+        password=request.POST.get('password')
         print(request.POST) 
         User=authenticate(request,email=email,password=password) 
         if User is not None:
@@ -69,13 +72,13 @@ def login(request):
         else:
             messages.warning(request,"Username or Password is incorrect!!")
 
-    return render(request, 'logout.html')
+    return render(request, 'login.html')
 
  
-# def logout(request):
-#     User=authenticate
-#     logout(request,User)
-#     return render(request, 'homepage.html')
+def logout(request):
+    User=authenticate
+    logout(request,User)
+    return render(request, 'homepage.html')
 
 
 
@@ -90,7 +93,7 @@ def stock(request):
     descitems = ItemInsert.objects.values('item_desc')
     descs = {item['item_desc'] for item in descitems }
     for desc in descs:
-        itm = ItemInsert.filter( item_desc = desc).values(desc)
+        itm = ItemInsert.objects.filter( item_desc = desc)
         n = len(itm)
         nSlides= n//4 + ceil((n/4) - (n//4))
         allitems.append([itm, range(1, nSlides), nSlides])
@@ -101,6 +104,13 @@ def stock(request):
 
 
 
+#    CART VIEW
+def cart(request):
+    return render(request, 'homepage.html')
+
+
 
 def seller(request):
-    return render(request, 'seller.html')
+    item=ItemInsert.objects.all()
+    return render(request, 'seller.html',item)
+
