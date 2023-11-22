@@ -90,7 +90,9 @@ def stock(request):
     # nSlides= n//4 + ceil((n/4) - (n//4))
 
     allitems = []
+
     descitems = ItemInsert.objects.values('item_desc')
+    print(descitems)
     descs = {item['item_desc'] for item in descitems }
     for desc in descs:
         itm = ItemInsert.objects.filter( item_desc = desc)
@@ -112,5 +114,5 @@ def cart(request):
 
 def seller(request):
     item=ItemInsert.objects.all()
-    return render(request, 'seller.html',item)
-
+    return render(request, 'seller.html',{'item':item})
+    
