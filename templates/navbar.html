@@ -11,7 +11,7 @@
     <title>{% block title %}{% endblock title %} : E-Commerce</title>
   </head>
   <body >
-    <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark  bg-dark">
         <a class="navbar-brand" href="/">E-Commerce</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,14 +39,18 @@
             <li class="nav-item">
               <a class="nav-link" href="/contact">Contact Us</a>
               </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Cart(0)</a>
-            </li>  
+            
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
+          <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+
+
+  Cart(<span id="cart">0</span>)
+</button>
 
           <li class="nav-item">
             <a class="btn btn-outline-success my-2 my-sm-0" href="cart">My Cart</a>
