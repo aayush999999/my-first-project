@@ -4,5 +4,15 @@
 
 
 
-{% block body %}This is Contact block{% endblock body %}
+{% block body %}
+
+<div class="container my-3">
+    <h3>Contact Us</h3>
+    <form action="/contact/" method="post" > {% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</lable>
+  </div>
+</div>
+
+{% endblock body %}
 

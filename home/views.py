@@ -111,8 +111,19 @@ def cart(request):
     return render(request, 'homepage.html')
 
 
-
 def seller(request):
     item=ItemInsert.objects.all()
     return render(request, 'seller.html',{'item':item})
-    
+
+
+def tracker(request):
+    return render(request, "tracker.html")
+
+def search(request):
+    return render(request, "search.html")    
+
+def checkout(request):
+    return render(request, "checkout.html")
+
+def productview(request):
+    return render(request, "prodView.html")
