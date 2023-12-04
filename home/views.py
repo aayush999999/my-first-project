@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
-from home.models import Registration,ItemInsert
+from home.models import Registration,ItemInsert,Contact
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from math import ceil
@@ -26,7 +26,16 @@ def about(request):
     #return HttpResponse("this is about page")
 
 def contact(request):
-    return render(request, 'contact.html')
+    if request.method=="POST":
+        print(request)
+        name=request.POST.get('name', '')
+        email=request.POST.get('email', '')
+        mobile=request.POST.get('mobile', '')
+        desc=request.POST.get('desc', '')
+        contact = Contact(name=name, email=email, mobile=mobile, desc=desc)
+        contact.save()
+        # print(name,email,mobile, desc )
+    return render(request, "contact.html")
     #return HttpResponse("this is contact page Mobile No. :- 6394983436")
 
 def reg(request):
