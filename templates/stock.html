@@ -100,12 +100,12 @@ padding-right: 0;
 </div>
 </div>
   <!-- left and right controls for the slide -->
-  <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+  {% comment %} <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
   </a>
   <a class="right carousel-control" href="#demo{{forloop.counter}}" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
+  </a> {% endcomment %}
   {% endfor %}
 </div>
 
@@ -127,16 +127,17 @@ if (localStorage.getItem('cart') == null) {
 
 
 // If the add to cart button is clicked, add/increment the item
-$('.cart').click(function() {
+{% comment %} $('.cart').click(function() { {% endcomment %}
+$('.divitem').on('click','button.cart',function(){
   var idstr = this.id.toString();
   if (cart[idstr] != undefined) {
     cart[idstr] = cart[idstr] + 1;
   } else {
     cart[idstr] = 1;
   }
-console.log(cart);
+//console.log(cart);
 updateCart(cart);
-localStorage.setItem('cart', JSON.stringify(cart));
+//localStorage.setItem('cart', JSON.stringify(cart));
 });
 
 
@@ -153,7 +154,7 @@ function updatePopver(cart){
     popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 15) + " ...<b>Qty:</b>   " + cart[item] + '<br>';
     i = i + 1;
   }
-  popStr = popStr + "</div> <a href='/checkout'><button class='btn btn-primary' id='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id='clearCart'>Clear Cart</button>"
+  popStr = popStr + "</div> <a href='checkout'><button class='btn btn-primary' id='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id='clearCart'>Clear Cart</button>"
   console.log(popStr);
   document.getElementById('popcart').setAttribute('data-content', popStr);
   $('#popcart').popover('show');
@@ -172,11 +173,13 @@ function clearCart(){
 
 
 function updateCart(cart) {
+  var sum = 0;
   for (var item in cart) {
+    sum = sum + cart[item]; // no of item show in navcart'(0)'
     document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-primary minus'>-</button> <span id='val" + item + "''>" + cart[item] + "</span> <button id='plus" + item + "' class='btn btn-primary plus'> + </button>";
   }
   localStorage.setItem('cart', JSON.stringify(cart));
-  document.getElementById('cart').innerHTML = Object.keys(cart).length;
+  document.getElementById('cart').innerHTML = sum;
   console.log(cart);
   updatePopver(cart);
 }
