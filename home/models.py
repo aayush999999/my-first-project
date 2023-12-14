@@ -39,3 +39,16 @@ class Contact(models.Model):
     def __str__(self):
         return self.name    
       
+
+class Checkout(models.Model):
+    cus_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=25)
+    email = models.CharField(max_length=25)
+    addr = models.CharField(max_length=50)
+    city = models.CharField(max_length=15)
+    state = models.CharField(max_length=15)
+    zip = models.CharField(max_length=10)
+    number = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.name

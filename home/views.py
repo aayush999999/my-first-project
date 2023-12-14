@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
-from home.models import Registration,ItemInsert,Contact
+from home.models import Registration,ItemInsert,Contact,Checkout
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from math import ceil
@@ -132,6 +132,18 @@ def search(request):
     return render(request, "search.html")    
 
 def checkout(request):
+    if request.method=="POST":
+        print(request)
+        name=request.POST.get('name', '')
+        email=request.POST.get('email', '')
+        addr=request.POST.get('addr', '')
+        city=request.POST.get('city', '')
+        state=request.POST.get('state', '')
+        zip=request.POST.get('zip', '')
+        number=request.POST.get('number', '')
+        checkout = Checkout(name=name, email=email, addr=addr, city=city, state=state, zip=zip, number=number)
+        checkout.save()
+        # print(name,email,addr, city, state, zip, number )
     return render(request, "checkout.html")
 
 def productview(request):
