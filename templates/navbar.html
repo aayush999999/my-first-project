@@ -43,14 +43,21 @@
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>&nbsp;
+          </form> 
+          <div>
+            <a href='checkout'><button class='btn btn-primary' id='checkout'>Checkout</button></a>
+               <button class='btn btn-primary' onclick='clearCart()' id='clearCart'>Clear Cart</button>  
+            </div>  
           <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus
 sagittis lacus vel augue laoreet rutrum faucibus.">
 
 
   Cart(<span id="cart">0</span>)
 </button>
+
+
+
 
           
         </div>
