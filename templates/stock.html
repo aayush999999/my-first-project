@@ -132,7 +132,7 @@ if (localStorage.getItem('cart') == null) {
 $('.divit').on('click', 'button.cart', function(){
   var idstr = this.id.toString();
   if (cart[idstr] != undefined) {
-    cart[idstr] = cart[idstr] + 1;
+    cart[idstr] = cart[idstr][0] + 1;
   } else {
     cart[idstr] = 1;
   }
