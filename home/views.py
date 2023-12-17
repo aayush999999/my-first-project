@@ -142,7 +142,7 @@ def checkout(request):
         state=request.POST.get('state', '')
         zip_code=request.POST.get('zip_code', '')
         number=request.POST.get('number', '')
-        checkout = Checkout(items_json, name=name, email=email, addr=addr, city=city, state=state, zip=zip, number=number)
+        checkout = Checkout(items_json, name=name, email=email, addr=addr, city=city, state=state, zip_code=zip_code, number=number)
         checkout.save()
         # print(name,email,addr, city, state, zip, number )
     return render(request, "checkout.html")
