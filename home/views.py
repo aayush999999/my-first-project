@@ -134,14 +134,15 @@ def search(request):
 def checkout(request):
     if request.method=="POST":
         print(request)
+        items_json=request.POST.get('items','')
         name=request.POST.get('name', '')
         email=request.POST.get('email', '')
         addr=request.POST.get('addr', '')
         city=request.POST.get('city', '')
         state=request.POST.get('state', '')
-        zip=request.POST.get('zip', '')
+        zip_code=request.POST.get('zip_code', '')
         number=request.POST.get('number', '')
-        checkout = Checkout(name=name, email=email, addr=addr, city=city, state=state, zip=zip, number=number)
+        checkout = Checkout(items_json, name=name, email=email, addr=addr, city=city, state=state, zip=zip, number=number)
         checkout.save()
         # print(name,email,addr, city, state, zip, number )
     return render(request, "checkout.html")

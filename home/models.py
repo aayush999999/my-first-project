@@ -41,13 +41,14 @@ class Contact(models.Model):
       
 
 class Checkout(models.Model):
-    cus_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=25)
-    email = models.CharField(max_length=25)
-    addr = models.CharField(max_length=50)
-    city = models.CharField(max_length=15)
-    state = models.CharField(max_length=15)
-    zip = models.CharField(max_length=10)
+    order_id = models.AutoField(primary_key=True)
+    items_json = models.AutoField(max_length=1000)
+    name = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    addr = models.CharField(max_length=60)
+    city = models.CharField(max_length=20)
+    state = models.CharField(max_length=20)
+    zip_code = models.CharField(max_length=10)
     number = models.CharField(max_length=15)
 
     def __str__(self):
