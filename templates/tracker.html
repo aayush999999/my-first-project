@@ -7,7 +7,7 @@
 <div class="container">
     <div class="col my-4">
         <h2>Enter your Order Id and Email address to track your order</h2>
-        <form method="post" action="/checkout/" id="trackerForm">{% csrf_token %}
+        <form method="post" action="#" id="trackerForm">{% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputname">Order Id</label>
@@ -44,7 +44,7 @@
         };
         $.ajax({
                 type: 'POST',
-                url: '/tracker/',
+                url: 'tracker',
                 data: formData,
                 encode: true
             })
