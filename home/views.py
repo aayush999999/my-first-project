@@ -1,9 +1,10 @@
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
-from home.models import Registration,ItemInsert,Contact
+from home.models import Registration,ItemInsert,Contact,Checkout,OrderUpdate
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from math import ceil
+import json
 
 # from django.contrib.auth.models import User
 # from django.core.exceptions import ValidationError
@@ -126,12 +127,47 @@ def seller(request):
 
 
 def tracker(request):
+    if request.method=="POST":
+        orderId = request.POST.get('orderId', '')
+        email = request.POST.get('email', '')
+        try:
+            order = Checkout.objects.filter(order_id=orderId, email=email)
+            if len(order)>0:
+                update = OrderUpdate.objects.filter(order_id=orderId)
+                updates = []
+                for item in update:
+                    updates.append({'text': item.update_desc, 'time': item.timestamp})
+                    response = json.dumps(updates, default=str)
+                return HttpResponse(response)
+            else:
+                return HttpResponse('{}')
+        except Exception as e:
+            return HttpResponse('{}')
+
     return render(request, "tracker.html")
 
 def search(request):
     return render(request, "search.html")    
 
 def checkout(request):
+    if request.method=="POST":
+        print(request)
+        items_json = request.POST.get('itemsJson', '')
+        name=request.POST.get('name', '')
+        email=request.POST.get('email', '')
+        addr=request.POST.get('addr', '')
+        city=request.POST.get('city', '')
+        state=request.POST.get('state', '')
+        zip_code=request.POST.get('zip_code', '')
+        number=request.POST.get('number', '')
+        checkout = Checkout(items_json=items_json, name=name, email=email, addr=addr, city=city, state=state, zip_code=zip_code, number=number)
+        checkout.save()
+        update= OrderUpdate(order_id= checkout.order_id, update_desc="The order has been placed")
+        update.save()
+        thank=True
+        id=checkout.order_id
+        return render(request, 'checkout.html', {'thank':thank, 'id':id})
+        # print(name,email,addr, city, state, zip, number )
     return render(request, "checkout.html")
 
 def productview(request):
