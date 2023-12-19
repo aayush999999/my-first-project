@@ -100,7 +100,7 @@ if (localStorage.getItem('cart') == null) {
     let qty = cart[item][0];
     let itemPrice = cart[item][2];
     sum = sum + qty;
-    totalPrice = totalPrice + qty * itemPrice
+    totalPrice = totalPrice + qty * itemPrice;
     mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
         ${name}
         <span class="badge badge-primary badge-pill">${qty}</span>

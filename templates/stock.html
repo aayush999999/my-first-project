@@ -138,7 +138,7 @@ $('.divit').on('click', 'button.cart', function(){
     qty = 1;
     name = document.getElementById('name' + idstr).innerHTML;
     price = document.getElementById('price' + idstr).innerHTML;
-    cart[idstr] = [qty , name, price];
+    cart[idstr] = [qty , name, parseInt(price)];
   }
   console.log(cart);
   updateCart(cart);
