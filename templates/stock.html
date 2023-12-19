@@ -81,6 +81,7 @@ padding-right: 0;
           <div class="card-body">
             <h5 class="card-title" id="nameitem{{i.id}}">{{i.item_desc}}</h5>
             <p class="card-text">{{i.item_group|slice:"0.53"}} </p>
+            <h6 class="card-title" >Price : <span id="priceitem{{i.id}}">{{i.item_rate}}</span></h6>
             <span id="divitem{{i.id}}" class="divit">
             <button id="item{{i.id}}" class="btn btn-primary cart">Add to Cart</button>
             </span>
@@ -136,11 +137,12 @@ $('.divit').on('click', 'button.cart', function(){
   } else {
     qty = 1;
     name = document.getElementById('name' + idstr).innerHTML;
-    cart[idstr] = [qty , name];
+    price = document.getElementById('price' + idstr).innerHTML;
+    cart[idstr] = [qty , name, price];
   }
-//console.log(cart);
-updateCart(cart);
-localStorage.setItem('cart', JSON.stringify(cart));
+  console.log(cart);
+  updateCart(cart);
+  //localStorage.setItem('cart', JSON.stringify(cart));
 });
 
 
@@ -149,20 +151,21 @@ $('#popcart').popover();
 updatePopver(cart);
 
 function updatePopver(cart){
-  console.log('We are inside updatePopver');
+  //console.log('We are inside updatePopver');
   var popStr ="";
   popStr = popStr + "<h5>Cart for your items in my shopping cart</h5><div class='mx-2 my-2'>";
   var i = 1;
+  
   for (var item in cart){
     popStr = popStr + "<br><b>" + i  + ")</b> ";
-    popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 15) + " ...<b>Qty:</b>   " + cart[item][0] + '<br>';
+    popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 15) + " ...<b>Qty:</b>   " + cart[item][0] + "   <b>Price:</b>" + cart[item][2] + '<br>' + " <b>Total:</b> " + cart[item][2]*cart[item][0] ;
     i = i + 1;
   }
-  popStr = popStr + "</div>"+" <a href='checkout'><button class='btn btn-primary' id='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id='clearCart'>Clear Cart</button>"
-  console.log(popStr);
+  popStr = popStr +"</div>"+" <a href='checkout'><button class='btn btn-primary' id='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id='clearCart'>Clear Cart</button>"
+  //console.log(popStr);
   document.getElementById('popcart').setAttribute('data-content', popStr);
   $('#popcart').popover('show');
-}
+  }
 
 
 function clearCart() {
