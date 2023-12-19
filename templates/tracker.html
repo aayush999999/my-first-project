@@ -57,7 +57,8 @@ $('#trackerForm').submit(function(event) {
         })
         .done(function(data) {
             console.log(data)
-            updates = JSON.parse(data);
+            data = JSON.parse(data)
+            updates = data[0];
             if (updates.length > 0 & updates != {}) {
                 for (i = 0; i < updates.length; i++) {
                     let text = updates[i]['text'];
