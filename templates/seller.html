@@ -1,104 +1,34 @@
 {% extends "navbar.html" %}
-{% load static %}
+
 {% block title %}SELLER{% endblock title %}
 
 {% block body %}
 
-<table class="table">
-    <thead class="thead-default">
-        <tr>
-            <th>Item Id</th>
-            <th>Image</th>
-            <th>Item Group</th>
-            <th>Item Description</th>
-            <th>Stock Quantity</th>
-            <th>Item Rate</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td><form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form></td>
-        </tr>
-        <tr>
-            {% comment %} <td>{{item.0.id}}</td>
-            <td>{{item.0.item_group}}</td>
-            <td>{{item.0.item_desc}}</td>
-            <td>{{item.0.stock_qty}}</td>
-            <td>{{item.0.item_rate}}</td> {% endcomment %}
-        </tr>
-        
-   
-
-    {% for i in item %}
-    <tr>
-        <td>{{i.id}}</td>
-        <td><img src="/media/{{i.image}}" width="100" height="100" ></td>
-        <td>{{i.item_group}}</td>
-        <td>{{i.item_desc}}</td>
-        <td>{{i.stock_qty}}</td>
-        <td><b>₹{{i.item_rate}}</b></td>
-        <td><span id="divitem{{i.id}}">
-            <button id="item{{i.id}}" class="btn btn-primary cart">Add to Cart</button>
-        </span></td>
-    </tr>
-{%endfor%}
-
+<div class="container my-3">
+    <h3>Insert Items</h3>
+    <form action="" method="post" > {% csrf_token %}
+    <div class="form-group">
+        <label for="img">Image :</lable>
+        <input type="image" class="form-control" id="image" name="image">
+    </div>     
+   <div class="form-group">
+    <label for="itemgroup">Name :</lable>
+      <input type="text" class="form-control" id="item_desc" name="item_desc" placeholder="Enter Your Name">
+   </div>
+   <div class="form-group">
+    <label for="desc">Group :</lable>
+      <input type="text" class="form-control" id="item_group" name="item_group" placeholder="Enter Your Email">
+   </div> 
+   <div class="form-group">
+    <label for="rate">MRP :</label>
+    <input type="text" class="form-control" id="item_rate" name="item_rate" placeholder="Enter Your Phone Number">
+  </div>
+   <div class="form-group">
+    <label for="qty">Qty :</label>
+    <input type="text" class="form-control" id="stock_qty" name="stock_qty" placeholder="Enter Your Phone Number">
+  </div>  
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+</div>
 
 {% endblock body %}
-
-{% block js %}
-
-<script>
-
-{% comment %} console.log('working'); {% endcomment %}
-
-// Find out the cart items from localStorage
-if(localStorage.getItem('cart') == null ){
-    var cart = {};
-}else{
-    cart = JSON.parse(localStorage.getItem('cart'));
-    document.getElementById('cart').innerHTML = Object.keys(cart).length; // showing no. to cart
-
-}
-
-
-$('.cart').click(function(){
-    //console.log('clicked');
-    var idstr = this.id.toString();
-    console.log(idstr);
-    if (cart[idstr] !=undefined){
-        cart[idstr] = cart[idstr] + 1;
-    }else{
-        cart[idstr] = 1;
-    }
-    //console.log(cart);
-    updateCart(cart);
-    localStorage.setItem('cart', JSON.stringify(cart));  //  set item in localStorage
-    document.getElementById('cart').innerHTML = Object.keys(cart).length; // showing no. to cart
-});
-
-
-//Add Popover to cart
-$('#popcart').popover();
-document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
-
-
-function updateCart(cart) {
-    for (var item in cart) {
-        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-primary minus'>-</button> <span id='val" + item + "''>" + cart[item] + "</span> <button id='plus" + item + "' class='btn btn-primary plus'> + </button>";
-    }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    document.getElementById('cart').innerHTML = Object.keys(cart).length;
-    console.log(cart);
-}
-
-</script>
-
-{% endblock js %}

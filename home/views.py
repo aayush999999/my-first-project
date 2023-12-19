@@ -22,9 +22,11 @@ def homepage(request):
     return render(request, 'homepage.html', context)
     #return HttpResponse("this is homepage")
 
+
 def about(request):
     return render(request, 'about.html')
     #return HttpResponse("this is about page")
+
 
 def contact(request):
     if request.method=="POST":
@@ -38,6 +40,7 @@ def contact(request):
         # print(name,email,mobile, desc )
     return render(request, "contact.html")
     #return HttpResponse("this is contact page Mobile No. :- 6394983436")
+
 
 def reg(request):
     # context = {}
@@ -69,7 +72,6 @@ def reg(request):
     return render(request, 'reg.html' ) #context=context
 
 
-
 def login(request):
     if request.method == "POST":
         email=request.POST.get('email')
@@ -89,8 +91,6 @@ def logout(request):
     User=authenticate
     logout(request,User)
     return render(request, 'homepage.html')
-
-
 
 
 #   Stock Display
@@ -114,16 +114,14 @@ def stock(request):
     return render(request, 'stock.html', params)
 
 
-
-
 #    CART VIEW
 def cart(request):
     return render(request, 'homepage.html')
 
 
-def seller(request):
+def practice(request):
     item=ItemInsert.objects.all()
-    return render(request, 'seller.html',{'item':item})
+    return render(request, 'practice.html',{'item':item})
 
 
 def tracker(request):
@@ -146,8 +144,10 @@ def tracker(request):
 
     return render(request, "tracker.html")
 
+
 def search(request):
     return render(request, "search.html")    
+
 
 def checkout(request):
     if request.method=="POST":
@@ -170,5 +170,10 @@ def checkout(request):
         # print(name,email,addr, city, state, zip, number )
     return render(request, "checkout.html")
 
+
 def productview(request):
     return render(request, "prodView.html") 
+
+
+def seller(request):
+    return render(request, "seller.html") 
