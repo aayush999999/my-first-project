@@ -7,49 +7,32 @@
 <div class="container my-3">
     <h3>Insert Items</h3>
     <form action="" method="post" > {% csrf_token %}
-    <div class="form-group">
+      <div class="form-group">
         <label for="img">Image :</lable>
-        <input type="image" class="form-control" id="image" name="image">
-    </div>     
-   <div class="form-group">
-    <label for="itemgroup">Name :</lable>
-      <input type="text" class="form-control" id="item_desc" name="item_desc" placeholder="Enter Your Name">
-   </div>
-   <div class="form-group">
-    <label for="desc">Group :</lable>
-      <input type="text" class="form-control" id="item_group" name="item_group" placeholder="Enter Your Email">
-   </div> 
-   <div class="form-group">
-    <label for="rate">MRP :</label>
-    <input type="text" class="form-control" id="item_rate" name="item_rate" placeholder="Enter Your Phone Number">
-  </div>
-   <div class="form-group">
-    <label for="qty">Qty :</label>
-    <input type="text" class="form-control" id="stock_qty" name="stock_qty" placeholder="Enter Your Phone Number">
-  </div>  
-  <button type="submit" class="btn btn-success">Submit</button>
-</form>
+        <input type="file" class="form-control" id="image" name="image" upload="seller/images">
+      </div>     
+      <div class="form-group">
+        <label for="itemgroup">Name :</lable>
+        <input type="text" class="form-control" id="item_desc" name="item_desc" placeholder="Enter Item Name">
+      </div>
+      <select class="form-control" id="item_group" name="item_group">
+        <option value="">Select</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Electronic">Electronic</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Grocesry">Grocesry</option>
+      </select>
+      <div class="form-group">
+        <label for="rate">MRP :</label>
+        <input type="text" class="form-control" id="item_rate" name="item_rate" placeholder="Enter Item Price">
+      </div>
+      <div class="form-group">
+        <label for="qty">Quantity :</label>
+        <input type="text" class="form-control" id="stock_qty" name="stock_qty" placeholder="Enter Quantity">
+      </div>  
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
 </div>
 
-
-<div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupFile01">Upload</label>
-    <input type="file" class="form-control" id="inputGroupFile01">
-  </div>
-  
-  <div class="input-group mb-3">
-    <input type="file" class="form-control" id="inputGroupFile02">
-    <label class="input-group-text" for="inputGroupFile02">Upload</label>
-  </div>
-  
-  <div class="input-group mb-3">
-    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button>
-    <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
-  </div>
-  
-  <div class="input-group">
-    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
-  </div>
 
 {% endblock body %}

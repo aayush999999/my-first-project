@@ -29,6 +29,7 @@ def about(request):
 
 
 def contact(request):
+    thank=False
     if request.method=="POST":
         print(request)
         name=request.POST.get('name', '')
@@ -37,9 +38,9 @@ def contact(request):
         desc=request.POST.get('desc', '')
         contact = Contact(name=name, email=email, mobile=mobile, desc=desc)
         contact.save()
+        thank=True
         # print(name,email,mobile, desc )
-    return render(request, "contact.html")
-    #return HttpResponse("this is contact page Mobile No. :- 6394983436")
+    return render(request, "contact.html", {'thank':thank})
 
 
 def reg(request):
@@ -176,4 +177,13 @@ def productview(request):
 
 
 def seller(request):
+    if request.method=="POST":
+        print(request)
+        image=request.POST.get('image', '')
+        item_desc=request.POST.get('item_desc', '')
+        item_group=request.POST.get('item_group', '')
+        item_rate=request.POST.get('item_rate', '')
+        stock_qty=request.POST.get('stock_qty', '')
+        itemInsert = ItemInsert(image=image, item_desc=item_desc, item_group=item_group, item_rate=item_rate, stock_qty=stock_qty, item_date=datetime.today())
+        itemInsert.save()
     return render(request, "seller.html") 

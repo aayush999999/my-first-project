@@ -21,7 +21,7 @@
     <label for="name">Mobile</label>
     <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Enter Your Phone Number">
   </div>
-          <div class="form-group">
+    <div class="form-group">
    <div class="form-group">
     <label for="desc">How May We Help You ?</label>
     <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
@@ -32,3 +32,11 @@
 
 {% endblock body %}
 
+{% block js %}
+<script>
+{% if thank %}
+alert('Thanks for contacting us. We wil get back to you soon!');
+document.location = "/contact";
+{%endif%}
+</script>
+{% endblock js%}

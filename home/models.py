@@ -17,8 +17,8 @@ class Registration(models.Model):
 class ItemInsert(models.Model): 
     item_group = models.CharField(max_length=30)
     item_desc = models.CharField(max_length=30)
-    stock_qty = models.IntegerField()
-    item_rate = models.IntegerField(default=0)
+    stock_qty = models.IntegerField(max_length=30)
+    item_rate = models.IntegerField(max_length=30, default="")
     item_date = models.DateField()
     image = models.ImageField(upload_to="seller/images", default="")
 
