@@ -1,49 +1,38 @@
 {% extends "navbar.html" %}
-{% load static %}
+
 {% block title %}SELLER{% endblock title %}
 
 {% block body %}
 
-<table class="table">
-    <thead class="thead-default">
-        <tr>
-            <th>Item Id</th>
-            <th>Image</th>
-            <th>Item Group</th>
-            <th>Item Description</th>
-            <th>Stock Quantity</th>
-            <th>Item Rate</th>
-        </tr>
-    </thead>
+<div class="container my-3">
+    <h3>Insert Items</h3>
+    <form action="" method="post" enctype="multipart/form-data"> {% csrf_token %}
+      <div class="form-group">
+        <label for="img">Image :</lable>
+        <input type="file" class="form-control" id="image" name="image">
+      </div>     
+      <div class="form-group">
+        <label for="itemgroup">Name :</lable>
+        <input type="text" class="form-control" id="item_desc" name="item_desc" placeholder="Enter Item Name">
+      </div>
+      <select class="form-control" id="item_group" name="item_group">
+        <option value="">Select</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Electronic">Electronic</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Grocesry">Grocesry</option>
+      </select>
+      <div class="form-group">
+        <label for="rate">MRP :</label>
+        <input type="text" class="form-control" id="item_rate" name="item_rate" placeholder="Enter Item Price">
+      </div>
+      <div class="form-group">
+        <label for="qty">Quantity :</label>
+        <input type="text" class="form-control" id="stock_qty" name="stock_qty" placeholder="Enter Quantity">
+      </div>  
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
 
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td><form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form></td>
-        </tr>
-        <tr>
-            {% comment %} <td>{{item.0.id}}</td>
-            <td>{{item.0.item_group}}</td>
-            <td>{{item.0.item_desc}}</td>
-            <td>{{item.0.stock_qty}}</td>
-            <td>{{item.0.item_rate}}</td> {% endcomment %}
-        </tr>
-        
-   
-
-    {% for i in item %}
-    <tr>
-        <td>{{i.id}}</td>
-        <td><img src="/media/{{i.image}}" width="100" height="100" ></td>
-        <td>{{i.item_group}}</td>
-        <td>{{i.item_desc}}</td>
-        <td>{{i.stock_qty}}</td>
-        <td><b>₹{{i.item_rate}}</b></td>
-    </tr>
-{%endfor%}
 
 {% endblock body %}

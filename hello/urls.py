@@ -16,7 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#6.11.23
 from django.conf import settings
 from django.conf.urls.static import static
 

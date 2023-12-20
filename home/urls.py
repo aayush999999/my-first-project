@@ -10,11 +10,12 @@ urlpatterns = [
     path("login",   views.login,    name='login'),
     path("logout",  views.logout,   name='logout'),
     path("stock",   views.stock,    name='stock'),
-    path("seller",  views.seller,   name='seller'),
+    path("practice",  views.practice,   name='practice'),
     path("cart",    views.cart,     name='cart'),
     path("tracker", views.tracker,  name='tracker'),
     path("search",  views.search,   name='search'),
     path("checkout",views.checkout, name='checkout'),
     path("productview",views.productview, name='prodView'),
+    path("seller",views.seller, name='seller'),
 ]
 

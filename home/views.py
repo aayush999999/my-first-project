@@ -1,9 +1,10 @@
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
-from home.models import Registration,ItemInsert,Contact
+from home.models import Registration,ItemInsert,Contact,Checkout,OrderUpdate
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from math import ceil
+import json
 
 # from django.contrib.auth.models import User
 # from django.core.exceptions import ValidationError
@@ -21,11 +22,14 @@ def homepage(request):
     return render(request, 'homepage.html', context)
     #return HttpResponse("this is homepage")
 
+
 def about(request):
     return render(request, 'about.html')
     #return HttpResponse("this is about page")
 
+
 def contact(request):
+    thank=False
     if request.method=="POST":
         print(request)
         name=request.POST.get('name', '')
@@ -34,9 +38,10 @@ def contact(request):
         desc=request.POST.get('desc', '')
         contact = Contact(name=name, email=email, mobile=mobile, desc=desc)
         contact.save()
+        thank=True
         # print(name,email,mobile, desc )
-    return render(request, "contact.html")
-    #return HttpResponse("this is contact page Mobile No. :- 6394983436")
+    return render(request, "contact.html", {'thank':thank})
+
 
 def reg(request):
     # context = {}
@@ -68,7 +73,6 @@ def reg(request):
     return render(request, 'reg.html' ) #context=context
 
 
-
 def login(request):
     if request.method == "POST":
         email=request.POST.get('email')
@@ -88,8 +92,6 @@ def logout(request):
     User=authenticate
     logout(request,User)
     return render(request, 'homepage.html')
-
-
 
 
 #   Stock Display
@@ -113,26 +115,75 @@ def stock(request):
     return render(request, 'stock.html', params)
 
 
-
-
 #    CART VIEW
 def cart(request):
     return render(request, 'homepage.html')
 
 
-def seller(request):
+def practice(request):
     item=ItemInsert.objects.all()
-    return render(request, 'seller.html',{'item':item})
+    return render(request, 'practice.html',{'item':item})
 
 
 def tracker(request):
+    if request.method=="POST":
+        orderId = request.POST.get('orderId', '')
+        email = request.POST.get('email', '')
+        try:
+            order = Checkout.objects.filter(order_id=orderId, email=email)
+            if len(order)>0:
+                update = OrderUpdate.objects.filter(order_id=orderId)
+                updates = []
+                for item in update:
+                    updates.append({'text': item.update_desc, 'time': item.timestamp})
+                    response = json.dumps([updates, order[0].items_json], default=str)
+                return HttpResponse(response)
+            else:
+                return HttpResponse('{}')
+        except Exception as e:
+            return HttpResponse('{}')
+
     return render(request, "tracker.html")
+
 
 def search(request):
     return render(request, "search.html")    
 
+
 def checkout(request):
+    if request.method=="POST":
+        print(request)
+        items_json = request.POST.get('itemsJson', '')
+        name=request.POST.get('name', '')
+        email=request.POST.get('email', '')
+        addr=request.POST.get('addr', '')
+        city=request.POST.get('city', '')
+        state=request.POST.get('state', '')
+        zip_code=request.POST.get('zip_code', '')
+        number=request.POST.get('number', '')
+        checkout = Checkout(items_json=items_json, name=name, email=email, addr=addr, city=city, state=state, zip_code=zip_code, number=number)
+        checkout.save()
+        update= OrderUpdate(order_id= checkout.order_id, update_desc="The order has been placed")
+        update.save()
+        thank=True
+        id=checkout.order_id
+        return render(request, 'checkout.html', {'thank':thank, 'id':id})
+        # print(name,email,addr, city, state, zip, number )
     return render(request, "checkout.html")
 
+
 def productview(request):
-    return render(request, "prodView.html")
+    return render(request, "prodView.html") 
+
+
+def seller(request):
+    if request.method=="POST":
+        print(request)
+        image=request.FILES['image']
+        item_desc=request.POST.get('item_desc', '')
+        item_group=request.POST.get('item_group', '')
+        item_rate=request.POST.get('item_rate', '')
+        stock_qty=request.POST.get('stock_qty', '')
+        itemInsert = ItemInsert(image=image, item_desc=item_desc, item_group=item_group, item_rate=item_rate, stock_qty=stock_qty, item_date=datetime.today())
+        itemInsert.save()
+    return render(request, "seller.html") 
