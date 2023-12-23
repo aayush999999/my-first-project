@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
-from home.models import Registration,ItemInsert,Contact,Checkout,OrderUpdate
+from home.models import Registration,ItemInsert,Contact,Checkout,OrderUpdate,Blogpost
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from math import ceil
@@ -23,9 +23,10 @@ def homepage(request):
     #return HttpResponse("this is homepage")
 
 
-def about(request):
-    return render(request, 'about.html')
-    #return HttpResponse("this is about page")
+def about(request, id):
+    post = Blogpost.objects.filter(post_id = id)[0]
+    print(post)
+    return render(request, 'about.html', {'post':post})
 
 
 def contact(request):
