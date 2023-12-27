@@ -23,6 +23,10 @@ def homepage(request):
     #return HttpResponse("this is homepage")
 
 
+def index(request):
+    return render(request, 'blogindex.html')
+
+
 def about(request, id):
     post = Blogpost.objects.filter(post_id = id)[0]
     print(post)
