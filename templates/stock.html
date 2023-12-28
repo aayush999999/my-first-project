@@ -44,16 +44,21 @@ padding-right: 0;
 {% load static %}
 
 <!--        carousel indicators starts from here-->
-<div class="container">
+<div class="container" >
+  
   <!--Slideshow starts here -->
   {% for product, range, nSlides in allitems %}
   <h5 class="my-4">Flash Sale On <b>{{product.0.item_group}}</b> - Recommended Items</h5>
-  <div id="#demo{{forloop.counter}}" class=" col carousel slide my-3" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
+  <div id="carouselExampleIndicators{{forloop.counter}}" class="carousel slide">
+  {% comment %} <div id="#demo{{forloop.counter}}" class=" col carousel slide my-3" data-ride="carousel"> {% endcomment %}
+  
+    <ul class="carousel-indicators">
+      <button type="button" data-bs-target="#demo{{forloop.counter}}" data-bs-slide-to="0" class="active" aria-current="true"></button>
+    {% comment %} <li data-bs-target="#demo{{forloop.counter}}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li> {% endcomment %}
 
     {% for i in range %}
-    <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}" ></li>
+    <button type="button" data-bs-target="#demo{{forloop.parentloop.counter}}" data-bs-slide-to="{{i}}"></button>
+    {% comment %} <li data-bs-target="#demo{{forloop.parentloop.counter}}" data-bs-slide-to="{{i}}" ></li> {% endcomment %}
     {% endfor %}
   </ul>
 
@@ -62,16 +67,13 @@ padding-right: 0;
   <div class="carousel-inner">
     
   <div class="carousel-item active">
-      
-
-
-      {% for i in product %}
+      {% for i in product|slice:"0.53"  %}
       <div class="col-xs-3 col-sm-3 col-md-3">
         <div class="card" style="width: 18rem;">
           <img src='/media/{{product.0.image}}' class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title" id="nameitem{{i.id}}">{{i.item_desc}}</h5>
-            <p class="card-text">{{i.item_group|slice:"0.53"}} </p>
+            <p class="card-text">{{i.item_group}} </p>
             <h6 class="card-title" >Price : <span id="priceitem{{i.id}}">{{i.item_rate}}</span></h6>
             <span id="divitem{{i.id}}" class="divit">
             <button id="item{{i.id}}" class="btn btn-primary cart">Add to Cart</button>
@@ -80,7 +82,8 @@ padding-right: 0;
           </div>
         </div>
       </div>
-      {% if forloop.counter|divisibleby:2 and forloop.counter > 0 and  not forloop.last %}
+      {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+      
     </div><div class="carousel-item">
       {% endif %}
 
@@ -90,17 +93,29 @@ padding-right: 0;
 
 
 </div>
-</div>
+
   <!-- left and right controls for the slide -->
-  <a class="carousel-control-prev" href="#demo{{forloop.counter}}" role="button" data-slide="prev">
+  {% comment %} <button class="carousel-control-prev" href="#demo{{forloop.counter}}" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"> {% endcomment %}
+  {% comment %} <a class="carousel-control-prev" background-color="blue" href="#demo{{forloop.counter}}" role="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#demo{{forloop.counter}}" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#demo{{forloop.counter}}" role="button" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
-  {% endfor %}
+  </a> {% endcomment %}
+
+  {% comment %} <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button> {% endcomment %}
+  
+</div>
+{% endfor %}
 </div>
 
 {% endblock %}
@@ -212,5 +227,5 @@ $('.divit').on("click", "button.plus", function() {
 
 </script>
 
-{% endblock %}
+{% endblock js %}
 

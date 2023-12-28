@@ -109,7 +109,7 @@ def stock(request):
 
     allitems = []
 
-    descitems = ItemInsert.objects.values('item_desc')
+    descitems = ItemInsert.objects.values('item_desc','id')
     print(descitems)
     descs = {item['item_desc'] for item in descitems }
     for desc in descs:
