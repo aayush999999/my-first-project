@@ -122,6 +122,34 @@ def stock(request):
     return render(request, 'stock.html', params)
 
 
+def searchMatch(query, item):
+    '''return true only if query matches the item'''
+    if query in item.item_desc or query in item.item_group:
+        return True
+    else:
+        return False
+    
+
+
+def search(request):
+    allitems = []
+
+    descitems = ItemInsert.objects.values('item_desc','id')
+    query = request.GET.get('search')
+    # print(descitems)
+    descs = {item['item_desc'] for item in descitems }
+    for desc in descs:
+        itmtemp = ItemInsert.objects.filter( item_desc = desc)
+        itm = [item for item in itmtemp if searchMatch(query, item)]
+        # n = len(itm)
+        # nSlides= n//4 + ceil((n/4) - (n//4))
+        # if len(itm)!=0:
+        allitems.append(itm)
+
+    params = {'allitems':allitems}
+    return render(request, 'stock.html', params)  
+
+
 #    CART VIEW
 def cart(request):
     return render(request, 'homepage.html')
@@ -150,33 +178,7 @@ def tracker(request):
         except Exception as e:
             return HttpResponse('{"status":"error"}')
 
-    return render(request, "tracker.html")
-
-
-def searchMatch(query, item):
-    '''return true only if query matches the item'''
-    if query in item.item_desc.lower() or query in item.item_group.lower():
-        return True
-    else:
-        return False
-
-
-def search(request):
-    query= request.GET.get('search')
-    allitems = []
-
-    descitems = ItemInsert.objects.values('item_desc','id')
-    print(descitems)
-    descs = {item['item_desc'] for item in descitems }
-    for desc in descs:
-        itmtemp = ItemInsert.objects.filter( item_desc = desc)
-        itm = [item for item in itmtemp if searchMatch(query, item)]
-        # n = len(itm)
-        # nSlides= n//4 + ceil((n/4) - (n//4))
-        allitems.append(itm)
-    
-    params = {'allitems':allitems}
-    return render(request, 'practice.html', params)    
+    return render(request, "tracker.html")  
 
 
 def checkout(request):
