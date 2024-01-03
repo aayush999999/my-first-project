@@ -174,7 +174,7 @@ def search(request):
         # n = len(itm)
         # nSlides= n//4 + ceil((n/4) - (n//4))
         allitems.append(itm)
-
+    
     params = {'allitems':allitems}
     return render(request, 'practice.html', params)    
 
