@@ -122,12 +122,12 @@ def stock(request):
     return render(request, 'stock.html', params)
 
 
-def searchMatch(query, item):
-    '''return true only if query matches the item'''
-    if query in item.item_desc or query in item.item_group:
-        return True
-    else:
-        return False
+# def searchMatch(query, item):
+#     '''return true only if query matches the item'''
+#     if query in item.item_desc or query in item.item_group:
+#         return True
+#     else:
+#         return False
     
 
 
@@ -151,11 +151,11 @@ def searchMatch(query, item):
 
 
 def search(request):
-    query=request.GET['query']
-    allPosts= ItemInsert.objects.searchMatch(item_desc=query)
-    
-    params={'allPosts': allPosts}
-    return render(request, 'practice.html', params)
+    query = request.POST.get('search')
+    item= ItemInsert.objects.filter(item_desc=query)    
+    params={'item': item}
+    return render(request, 'search.html', params)
+    # return HttpResponse("this is homepage")
 
 
 #    CART VIEW
