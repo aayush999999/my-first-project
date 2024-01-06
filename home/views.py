@@ -155,7 +155,7 @@ def search(request):
     item= ItemInsert.objects.filter(item_desc=query)    
     params={'item': item}
     return render(request, 'search.html', params)
-    # return HttpResponse("this is homepage")
+    # return HttpResponse("this is searchpage")
 
 
 #    CART VIEW
