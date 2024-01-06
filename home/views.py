@@ -122,9 +122,9 @@ def stock(request):
     return render(request, 'stock.html', params)
 
 
-def searchMatch(query, item):
+def searchMatch(query, itema):
     '''return true only if query matches the item'''
-    if query in item.item_desc or query in item.item_group :
+    if query in itema.item_desc or query in itema.item_group :
         return True
     else:
         return False
