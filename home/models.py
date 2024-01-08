@@ -43,6 +43,7 @@ class Contact(models.Model):
 class Checkout(models.Model):
     order_id = models.AutoField(primary_key=True)
     items_json = models.CharField(max_length=1000)
+    amount = models.IntegerField(default=0)
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     addr = models.CharField(max_length=60)
