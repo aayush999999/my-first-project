@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from math import ceil
 import json
+from django.views.decorators.csrf import csrf_exempt
 
 # from django.contrib.auth.models import User
 # from django.core.exceptions import ValidationError
@@ -208,9 +209,16 @@ def checkout(request):
         update.save()
         thank=True
         id=checkout.order_id
-        return render(request, 'checkout.html', {'thank':thank, 'id':id})
+        # return render(request, 'checkout.html', {'thank':thank, 'id':id})
         # print(name,email,addr, city, state, zip, number )
+        # Request Paytm to transfer the amount to your account after payment by user 
     return render(request, "checkout.html")
+
+
+@csrf_exempt
+def handlerequest(request):
+    # paytm will send you post request here
+    pass
 
 
 def productview(request):
