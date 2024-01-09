@@ -17,6 +17,6 @@ urlpatterns = [
     path("search",  views.search,   name='search'),
     path("checkout",views.checkout, name='checkout'),
     path("seller",views.seller, name='seller'),
-    path("handlerequest",views.handlerequest, name='handlerequest'),
+    # path("handlerequest",views.handlerequest, name='handlerequest'),
 ]
 

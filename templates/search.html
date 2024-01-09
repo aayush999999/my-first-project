@@ -3,6 +3,15 @@
 {% block title %}SEARCH{% endblock title %}
 
 {% block body %}
+<h2>Search results : </h2>
+{% if item|length < 1 %}
+<p>No search results</p>
+
+ Your search - <i><b>{{query}}</b></i> - did not match any <b>Items Description</b>.
+  Suggestions: <br>
+  Try different keywords.
+
+{% endif %}
 
 <table class="table">
     <thead class="thead-default">
@@ -21,11 +30,10 @@
         <tr>
             <td></td>
             <td></td>
-            <td><form method='get' action='/search' class="form-inline my-2 my-lg-0">{% csrf_token %}
-              {% comment %} <form class="form-inline my-2 my-lg-0"> {% endcomment %}
+            {% comment %} <td><form method='get' action='/search' class="form-inline my-2 my-lg-0">{% csrf_token %}
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search" >
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>&nbsp;
-              </form></td>
+              </form></td> {% endcomment %}
         </tr>
     {% for i in item %}
     <tr>

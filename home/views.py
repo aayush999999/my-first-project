@@ -155,7 +155,7 @@ def search(request):
     query = request.POST.get('search')
     itemtemp= ItemInsert.objects.filter(item_desc=query)
     item = [itema for itema in itemtemp if searchMatch(query, itema)]    
-    params={'item': item}
+    params={'item': item, 'query': query}
     return render(request, 'search.html', params)
     # return HttpResponse("this is searchpage")
 
