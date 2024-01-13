@@ -157,7 +157,6 @@ def search(request):
         item = []
     else:
         item= ItemInsert.objects.filter(item_desc=query)
-        # item = [item for item in itemtemp if searchMatch(query, item)]
     if item.count() == 0:
         messages.error(request, "Please fill the form correctly")    
     params={'item': item, 'query': query}
