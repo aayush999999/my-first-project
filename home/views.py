@@ -121,14 +121,6 @@ def stock(request):
 
     params = {'allitems':allitems}
     return render(request, 'stock.html', params)
-
-
-def searchMatch(query, item):
-    '''return true only if query matches the item'''
-    if query in item.item_desc or query in item.item_group :
-        return True
-    else:
-        return False
  
 
 def search(request):
