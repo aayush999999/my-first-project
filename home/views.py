@@ -154,11 +154,13 @@ def searchMatch(query, item):
 def search(request):
     query = request.POST.get('search')
     if len(query)>78:
-        item = []
+        item = ItemInsert.objects.none()
     else:
-        item= ItemInsert.objects.filter(item_desc=query)
+        itemItem_desc= ItemInsert.objects.filter(item_desc__icontains=query)
+        itemItem_group= ItemInsert.objects.filter(item_group__icontains=query)
+        item= itemItem_desc.union(itemItem_group)
     if item.count() == 0:
-        messages.error(request, "Please fill the form correctly")    
+        messages.warning(request, "No Search result found. Please refine your query ")    
     params={'item': item, 'query': query}
     return render(request, 'search.html', params)
 
