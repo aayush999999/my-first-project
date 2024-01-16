@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Registration,ItemInsert,Contact,Checkout,OrderUpdate,Blogpost
 from django.contrib import messages
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.models import Registration
 from math import ceil
 import json
 # from django.views.decorators.csrf import csrf_exempt
@@ -52,33 +52,27 @@ def contact(request):
 
 
 def reg(request):
-    # context = {}
     if request.method == "POST":
-        
-
         # print(request.POST)
         name = request.POST.get('name')
         password = request.POST.get('password')
         if not name :
-            messages.success(request,"name is blank")
+            messages.warning(request,"name is blank")
             return render(request, 'reg.html', ) 
         
         if not password :
-            messages.success(request,"password is blank")
+            messages.warning(request,"password is blank")
             return render(request, 'reg.html', ) 
         
         if len(password) < 6:
-            messages.success(request, 'Password too short')
+            messages.warning(request, 'Password too short')
             return render(request, 'reg.html', )
         
         Registration.objects.create(name=name,password=password,date=datetime.today())
-
-        # context["name"] = name
-
         messages.success(request,"Successfully Registered")
-        return redirect ('login')
-
-    return render(request, 'reg.html' ) #context=context
+        return redirect('login')
+    else:
+        return render(request,'404 Not Found')
 
 
 def login(request):
