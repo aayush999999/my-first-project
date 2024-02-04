@@ -5,9 +5,11 @@ from django.contrib import messages
 from django.contrib.auth.models import Registration
 from math import ceil
 import json
+
+from django.db.models import Q
 # from django.views.decorators.csrf import csrf_exempt
 
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 # from django.core.exceptions import ValidationError
 
 
@@ -55,6 +57,7 @@ def reg(request):
     if request.method == "POST":
         # print(request.POST)
         name = request.POST.get('name')
+        email = request.POST.get('email')
         password = request.POST.get('password')
         if not name :
             messages.warning(request,"name is blank")
@@ -67,25 +70,32 @@ def reg(request):
         if len(password) < 6:
             messages.warning(request, 'Password too short')
             return render(request, 'reg.html', )
-        
+        print(name, email, password)
         Registration.objects.create(name=name,password=password,date=datetime.today())
+        usr = User.objects.create(username=f"{name}-{email}",first_name=name, email=email)
+        usr.set_password(password)
+        usr.save()
+        # context["name"] = name
+
         messages.success(request,"Successfully Registered")
         return redirect('login')
     else:
         return render(request,'404 Not Found')
 
 
-def login(request):
+def login_user(request):
     if request.method == "POST":
         email=request.POST.get('email')
         password=request.POST.get('password')
         print(request.POST) 
-        User=authenticate(request,email=email,password=password) 
-        if User is not None:
-            login(request,User)
-            return redirect('about')
-        else:
-            messages.warning(request,"Username or Password is incorrect!!")
+        usr = User.objects.get(email=email)
+        # User=authenticate(request,email=email,password=password) 
+        # print(User)
+        # if User is not None:
+        login(request, usr)
+        return redirect('about')
+        # else:
+        #     messages.warning(request,"Username or Password is incorrect!!")
 
     return render(request, 'login.html')
 
@@ -128,7 +138,8 @@ def search(request):
     if item.count() == 0:
         messages.warning(request, "No Search result found. Please refine your query ")    
     params={'item': item, 'query': query}
-    return render(request, 'search.html', params)
+    return render(request, 'practice.html', params)
+    # return HttpResponse("this is searchpage")
 
 
 #    CART VIEW
@@ -138,6 +149,15 @@ def cart(request):
 
 def practice(request):
     item=ItemInsert.objects.all()
+
+    query = request.GET.get('search')
+    if query:
+        item = ItemInsert.objects.filter(Q(item_group=query) | Q(item_desc=query) )
+        # itemtemp= ItemInsert.objects.filter(item_desc=query)
+        # item = [itema for itema in itemtemp if searchMatch(query, itema)]    
+    
+        # params={'item': item, 'query': query}
+
     return render(request, 'practice.html',{'item':item})
 
 
