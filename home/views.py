@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Registration,ItemInsert,Contact,Checkout,OrderUpdate,Blogpost
 from django.contrib import messages
-from django.contrib.auth.models import Registration
+# from django.contrib.auth.models import Registration
 from math import ceil
 import json
 
@@ -92,7 +92,7 @@ def login_user(request):
         # User=authenticate(request,email=email,password=password) 
         # print(User)
         # if User is not None:
-        login(request, usr)
+        # login(request, usr)
         return redirect('about')
         # else:
         #     messages.warning(request,"Username or Password is incorrect!!")
@@ -101,7 +101,7 @@ def login_user(request):
 
  
 def logout(request):
-    User=authenticate
+    # User=authenticate
     logout(request,User)
     return render(request, 'homepage.html')
 
