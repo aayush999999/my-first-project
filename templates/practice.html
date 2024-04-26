@@ -21,7 +21,7 @@
         <tr>
             <td></td>
             <td></td>
-            <td><form method='POST' action='/search' class="form-inline my-2 my-lg-0">{% csrf_token %}
+            <td><form method='GET' action='/practice' class="form-inline my-2 my-lg-0">{% csrf_token %}
               {% comment %} <form class="form-inline my-2 my-lg-0"> {% endcomment %}
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search" >
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>&nbsp;
@@ -153,3 +153,6 @@ $('.divit').on("click", "button.plus", function() {
 </script>
 
 {% endblock %}
+
+
+

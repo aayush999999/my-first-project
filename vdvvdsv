@@ -1,0 +1,611 @@
+[33mcommit baca771b45e3e5d62d7129ee874f170b3ac9acd8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sun Feb 4 14:35:33 2024 +0530
+
+    search feature improve
+
+[33mcommit 1bdcc051301aabbdba56638537b8e7260b09a345[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Jan 10 14:59:47 2024 +0530
+
+    improve search feature
+
+[33mcommit 43d9d051eadd00d8b5998ba545ad6039f8a075c2[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Jan 9 16:26:52 2024 +0530
+
+    improve search feature
+
+[33mcommit 16c6c4272b48219550af21b70b6be79c362c96be[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Jan 9 14:56:09 2024 +0530
+
+    improve search feature
+
+[33mcommit b6eaa1841c4afc61d5294fc12906a0ca9cd50751[m
+Merge: 5ca5380 5863fc6
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Jan 9 13:36:34 2024 +0530
+
+    try to Pay using Paytm
+
+[33mcommit 5ca53807dc3b452a0704a231bf088d490dc0feef[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Jan 9 13:30:07 2024 +0530
+
+    try to Pay using Paytm
+
+[33mcommit 5863fc6bec1d0695a21bed348debc351fddcbe94[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Mon Jan 8 21:24:15 2024 +0530
+
+    try to new
+
+[33mcommit b45d43c004085765f5c6a33659a45e0c9eae8645[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Mon Jan 8 16:25:55 2024 +0530
+
+    create payment feature
+
+[33mcommit 2075c9e459b67ee821d01ca8f43857537709fd56[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Mon Jan 8 14:56:23 2024 +0530
+
+    amount store in CHECKOUT db
+
+[33mcommit a53c001b5cd17c0630de0ef4dc06876da8c77302[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sat Jan 6 12:06:19 2024 +0530
+
+    try to fix a bug in search feature
+
+[33mcommit e209f73f9a08315241d5169af87836e9a294f95b[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sat Jan 6 09:00:20 2024 +0530
+
+    try to fix a bug in search feature
+
+[33mcommit 8c2fa0aff40aca93de7d5baf6ba92a6397f6045b[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sat Jan 6 08:42:12 2024 +0530
+
+    try to fix a bug in search feature
+
+[33mcommit 27f0a0c600bab8ff17db7088798c799394ee0995[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Jan 5 20:28:06 2024 +0530
+
+    fixin search function
+
+[33mcommit 01a82e700c9332c98abd13e242d2b46dd3be1f91[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Jan 5 14:46:32 2024 +0530
+
+    search
+
+[33mcommit d314064312acf297da5b83932755fa6e63852bfe[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Jan 5 14:43:43 2024 +0530
+
+    search
+
+[33mcommit 880ef8bf0dfd16602614b460e1bde50281dee44b[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Jan 4 14:53:32 2024 +0530
+
+    checkout...
+
+[33mcommit 7176d730810a0772f44f206099e61b2ff6e1ff0a[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Jan 4 14:43:30 2024 +0530
+
+    fixing search
+
+[33mcommit 340b2c1e8ab29889f80d02d237d027fd7776901b[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Jan 3 21:21:50 2024 +0530
+
+    try to fix a search option
+
+[33mcommit 8c6c066be38ad77619ff73c8807dee41c94dfeab[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Jan 3 17:29:18 2024 +0530
+
+    fixing a bug in Tracker
+
+[33mcommit f4bc692a4f0f0829bd21152846cd627d2a6fd28f[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Jan 3 14:51:26 2024 +0530
+
+    search button fixing
+
+[33mcommit 2d58ec52d474012081f00ae24c4bf0f4e11f4291[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Jan 2 21:29:33 2024 +0530
+
+    fb comment & like Button
+
+[33mcommit f7ca71f7a500f4e64787376a17d3b33bab9d047c[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Jan 2 14:53:31 2024 +0530
+
+    search
+
+[33mcommit 99127861d63100a649c824ca20eb94420026cf00[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Mon Jan 1 14:57:02 2024 +0530
+
+    search
+
+[33mcommit d7b6bba34d71f3a6e83a83b4aa25b4e0b60ea915[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 28 16:16:20 2023 +0530
+
+    fix carousel problem by practice.html
+
+[33mcommit 90d13340afc871075e452c1ac737b400aae1c797[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 28 08:39:03 2023 +0530
+
+    carousel
+
+[33mcommit 670e70f3f5d983dbbd16302e28a0bce6cc8122cd[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 21:07:07 2023 +0530
+
+    carousel fixing
+
+[33mcommit 3176716975d62278b1c839c39db50e85686d330b[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 17:57:48 2023 +0530
+
+    slide fixing try
+
+[33mcommit 81110318e1fb2948670d3e15e97d8179cf27cdeb[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 17:22:47 2023 +0530
+
+    slide fixing try
+
+[33mcommit 5cc5d20218e6874ae8914e1e13ffbf599f794743[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 16:53:59 2023 +0530
+
+    slide fixing try
+
+[33mcommit 6117266d3de014d22d340a648df6fd62441573cd[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 15:02:39 2023 +0530
+
+    slide fixing try
+
+[33mcommit dcbcb09206c0e688d2e1ce2bea04179c18a28f37[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 11:45:23 2023 +0530
+
+    about post html...
+
+[33mcommit 665ca7947cee3e1f07c31321583da485f4f4459e[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 10:51:48 2023 +0530
+
+    blogindex cretae
+
+[33mcommit 4930b5ae52a2844346af26004191c9ab590bba8c[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 08:49:44 2023 +0530
+
+    about fixing
+
+[33mcommit d0abad44e99cfdc82db59a8488407fa1adfdb367[m
+Merge: ce3f55e ef9a8d7
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 08:46:57 2023 +0530
+
+    about fixing
+
+[33mcommit ce3f55eef2b1b278cb41ddd501400dd762bd1a92[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 08:43:08 2023 +0530
+
+    about
+
+[33mcommit 621a88d23db9de0a8d380f618ed7eaa66cc5defc[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 27 08:36:57 2023 +0530
+
+    db
+
+[33mcommit ef9a8d7f9af45a2583a1d96d86a5d1318ce3ecfa[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Dec 26 20:55:08 2023 +0530
+
+    blogpost
+
+[33mcommit 6db27609aa76f0a73686dfc334d621bc50054a06[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sat Dec 23 22:16:49 2023 +0530
+
+    nothing
+
+[33mcommit 278be71eef51f2d241b3029f0ac289ff9f0e0631[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sat Dec 23 22:10:37 2023 +0530
+
+    setup
+
+[33mcommit 2b840b5e1e01f60d865f4f607f6b774af89f667a[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sat Dec 23 12:31:36 2023 +0530
+
+    improve about.html
+
+[33mcommit 25a7cd5c7ff5484da341b3b32e7fd1db8967ff64[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sat Dec 23 08:46:37 2023 +0530
+
+    cretae blogpost model
+
+[33mcommit 4b599e2375179be73805c485162d124191e96f8e[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sat Dec 23 08:34:08 2023 +0530
+
+    a
+
+[33mcommit fb54619af331e504dad675def04ea3fa6f4cc489[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Dec 22 14:47:47 2023 +0530
+
+    improving_about
+
+[33mcommit 9f8c18981a953fb96112e4794fc49ca58d6e1733[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 21 14:34:37 2023 +0530
+
+    remove some comment code
+
+[33mcommit 4f957d81eea3412246c802f85814100180051aa9[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 21 14:24:50 2023 +0530
+
+    add +1 item
+
+[33mcommit ac47c033a2e3b553c3d0dc80d6e7caeb4f854ff3[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 21 08:38:07 2023 +0530
+
+    } remove
+
+[33mcommit 7760793a0323462cef5ce4bce1256d9cc842a11d[m
+Merge: 864ad06 290bbce
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 20 19:57:55 2023 +0530
+
+    upload img error solve
+
+[33mcommit 290bbce8a718900a12fe88c63fec3bcb2ece92b6[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 20 16:49:16 2023 +0530
+
+    item insert form improving
+
+[33mcommit 15cdd8a7801bbb003adfaba63b7e76c461b8c444[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Dec 19 16:23:17 2023 +0530
+
+    insert items
+
+[33mcommit 280582a4c8940df81233d0aec165e27975867dee[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Dec 19 16:19:31 2023 +0530
+
+    insert items
+
+[33mcommit 7dd76d01f08480e4a41d20291a4b8a80d04c75ce[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Dec 19 15:40:24 2023 +0530
+
+    Displaying order items in tracker templates
+
+[33mcommit 2e2416c0dc9f46a6f83996dc433d455cd944cf7a[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Dec 19 14:56:56 2023 +0530
+
+    Display items price
+
+[33mcommit f62b3dc24ce2ffdd17b8b6ab0873334adb7c8c95[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Dec 19 14:48:15 2023 +0530
+
+    Display items price
+
+[33mcommit 8c0573c81f9b376ac90ad6630c0db50700572bd5[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Dec 19 09:47:09 2023 +0530
+
+    display order in tracker
+
+[33mcommit 41a8e328eb933da14b04cc28ab5e283da7cb5a0c[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Mon Dec 18 14:52:15 2023 +0530
+
+    tracker1
+
+[33mcommit 35ada8660cb330e010d2252801c0f3c45ed29927[m
+Merge: 93de84b ae63356
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Mon Dec 18 14:45:41 2023 +0530
+
+    tracker
+
+[33mcommit 93de84bb8feb8f31697c86218d0409a15f68e52a[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Mon Dec 18 08:24:53 2023 +0530
+
+    check
+
+[33mcommit ae63356d3752bbb8a8e1551bd5dda2277f247bd1[m
+Author: unknown <aayush.sri1@gmail.com>
+Date:   Sun Dec 17 18:28:53 2023 +0530
+
+    checkout_BD
+
+[33mcommit 9a710acb0032f7892000f732d647d0bde8707ee2[m
+Author: unknown <aayush.sri1@gmail.com>
+Date:   Sun Dec 17 18:27:04 2023 +0530
+
+    checkout_BD
+
+[33mcommit 29da4a2383817c50e32f868700ad35241e73ffa2[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Dec 15 12:44:32 2023 +0530
+
+    check
+
+[33mcommit 38bef31f102000691ede91307c0b0363f7838a4f[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Dec 15 12:43:11 2023 +0530
+
+    check
+
+[33mcommit 8b927ea1f42e3715bf41738e91a08fc676914305[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Dec 15 12:41:56 2023 +0530
+
+    checkout
+
+[33mcommit 16d4a4341cab7608248458bbd4fa05f15b749ce6[m
+Author: unknown <aayush.sri1@gmail.com>
+Date:   Thu Dec 14 21:50:46 2023 +0530
+
+    checkout_BD
+
+[33mcommit 898d271928f78b54ec34ad3576cd85873dab454d[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 14 16:27:12 2023 +0530
+
+    checkout tem.
+
+[33mcommit 83936494bab4f1a321b4b699e27ce107a0d14dc4[m
+Author: unknown <aayush.sri1@gmail.com>
+Date:   Wed Dec 13 21:19:22 2023 +0530
+
+    cart
+
+[33mcommit 3be3ecf7aaea0270dd4be646867ab8f1046ca21f[m
+Merge: 41cf777 f1112cd
+Author: unknown <aayush.sri1@gmail.com>
+Date:   Wed Dec 13 05:43:11 2023 -0800
+
+    lp
+
+[33mcommit 41cf777a55b3dd61b31d5f14019540093f7ec61d[m
+Author: unknown <aayush.sri1@gmail.com>
+Date:   Wed Dec 13 05:39:44 2023 -0800
+
+    lp
+
+[33mcommit f1112cd7f23adc4f9b8ef021839ed1daf4cedc0e[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 13 16:21:49 2023 +0530
+
+    #47 checkout & clear button
+
+[33mcommit 20dfd05dff12a1148983408125292ed13b451164[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 13 08:40:35 2023 +0530
+
+    BD
+
+[33mcommit 864ad067d7112db381ef5e7fb7a1207175af8bca[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Dec 12 21:59:54 2023 +0530
+
+    a
+
+[33mcommit 625a31e33266bc9d7566d29f5bb9dd2a7c7f789b[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Dec 12 16:48:01 2023 +0530
+
+    add button in items
+
+[33mcommit d90b0a951b4fa96ee44c75f0d7bdb458e0ed5718[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Dec 8 14:31:22 2023 +0530
+
+    rename
+
+[33mcommit 313b4be058768a65ccfd4accf715bd3ae313d6e7[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 7 21:12:57 2023 +0530
+
+    helloj
+
+[33mcommit c5b38fddd047584929885dc3ec1db8501a6f5a8e[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 7 21:11:08 2023 +0530
+
+    first commit
+
+[33mcommit 9bc81860c6bb15a3d2607249ec34b114801dc3dc[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 7 20:52:23 2023 +0530
+
+    hello
+
+[33mcommit 139e631240f976d58dad2b42cf91dbc9072629b5[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 7 20:48:09 2023 +0530
+
+    first commit
+
+[33mcommit d06f579baa78e9fd87171e0941b36a1b377884c0[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 7 20:43:11 2023 +0530
+
+    hello
+
+[33mcommit 25bc87a24d5936ed9013d3735fc27b51d59285f0[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Dec 7 20:38:50 2023 +0530
+
+    first commit
+
+[33mcommit 58178d45596483e40f220b7b4241fc14d5b0c42f[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 6 20:53:49 2023 +0530
+
+    re
+
+[33mcommit d3bdcf8a3009fbfe6009cf62f2ee55ce2e88d441[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 6 20:43:09 2023 +0530
+
+    contact.mobile
+
+[33mcommit e41f9da60abb73137625d9a0db57513808d0481e[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Dec 6 20:29:25 2023 +0530
+
+    resume
+
+[33mcommit e5472db95f7b3068a1adc8f3ebfc0355c9f83366[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Dec 5 21:09:02 2023 +0530
+
+    cv link
+
+[33mcommit f9641e23ff68ca2f5bc02e46bb167cf81eb213ab[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Mon Dec 4 15:00:21 2023 +0530
+
+    create contact page/table
+
+[33mcommit 760bdde10092d76fc090d6435df3114591bdab35[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sat Dec 2 08:58:59 2023 +0530
+
+    contact
+
+[33mcommit 6be9445be2d59d399ccf1cd5a3b3a4857991faeb[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Dec 1 14:56:34 2023 +0530
+
+    4 new templates & contact
+
+[33mcommit ed6667ca9febed8a526a3657bb368b3aac072319[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Nov 29 14:58:54 2023 +0530
+
+    cart modify
+
+[33mcommit 201d5e7a9a1af72a6203452971a057240cfc08e8[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Nov 28 14:57:48 2023 +0530
+
+    css renew
+
+[33mcommit 37e42b4bbadf0714fb8a35b2263fc3d845d39475[m
+Merge: 10a201a 9849932
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Sat Nov 25 08:44:50 2023 +0530
+
+    show no. in cart
+
+[33mcommit 98499328580d89f7732a6afeabe4d893c9638ae2[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Nov 24 20:19:44 2023 +0530
+
+    cart update
+
+[33mcommit ebd62737d3ab7ed18e43f5a9c89a438f534e588f[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Fri Nov 24 19:39:52 2023 +0530
+
+    nw
+
+[33mcommit 10a201a60fc9b4d1a53b113a932230c6845c0ad4[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Nov 22 20:38:26 2023 +0530
+
+    cart stick-top in navbar
+
+[33mcommit e743b5d96f2c665a6a73dea8bdc50ea1e6b394db[m
+Merge: 92b489d e4f16f4
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Nov 22 14:57:12 2023 +0530
+
+    cart console solve
+
+[33mcommit 92b489d407fc5b1d8041157aa650bce1ef5a62d2[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Nov 22 12:54:31 2023 +0530
+
+    cart in  office
+
+[33mcommit e4f16f47182c8d62c00e5b0b513898f7e99b1489[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Nov 21 20:57:23 2023 +0530
+
+    create cart n
+
+[33mcommit 456c0c5a345f334941fc5cc099c3274b49c27d10[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Nov 21 20:31:00 2023 +0530
+
+    creat cart
+
+[33mcommit de9af635243e522855bd5fcf14c161ee4c8b2d4d[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Nov 9 21:08:53 2023 +0530
+
+    stock view complete
+
+[33mcommit 9833604374d0f7f4c565406f75dd47c4f8876e5f[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Thu Nov 9 15:06:31 2023 +0530
+
+    view item
+
+[33mcommit 8d94151d4c585eebb6ed5f65300cdf4c1f244b93[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Nov 8 21:38:09 2023 +0530
+
+    slide solve
+
+[33mcommit 93ba104bb0464d4890e9a6c331880b4372eea5d1[m
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Wed Nov 8 14:52:23 2023 +0530
+
+    stock page recreate
+
+[33mcommit c85f9fdf5c183fb072b3c326a67283abb1716657[m
+Merge: ffa10d9 a27a277
+Author: aayush999999 <aayush.sri1@gmail.com>
+Date:   Tue Nov 7 16:49:34 2023 +0530
+
+    7.11.23
+
+[33mcommit a27a277d6cf82f1ffbb3741702ac6e712588c0f6[m
+Merge: d364f82 559d1d7
+Author: aayush999999 
