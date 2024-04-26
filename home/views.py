@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 from home.models import Registration,ItemInsert,Contact,Checkout,OrderUpdate,Blogpost
 from django.contrib import messages
-from django.contrib.auth.models import Registration
+# from django.contrib.auth.models import Registration
 from math import ceil
 import json
 # from django.views.decorators.csrf import csrf_exempt
@@ -10,7 +10,7 @@ import json
 # from django.contrib.auth.models import User
 # from django.core.exceptions import ValidationError
 
-
+from django.contrib.auth import authenticate, login, logout
 
 
 # Create your views here.
@@ -72,27 +72,27 @@ def reg(request):
         messages.success(request,"Successfully Registered")
         return redirect('login')
     else:
-        return render(request,'404 Not Found')
+        return render(request,'reg.html ')
 
 
-def login(request):
+def login_view(request):
     if request.method == "POST":
-        email=request.POST.get('email')
+        username=request.POST.get('username')
         password=request.POST.get('password')
-        print(request.POST) 
-        User=authenticate(request,email=email,password=password) 
+        # print(request.POST) 
+        User=authenticate(request,username=username,password=password) 
         if User is not None:
             login(request,User)
             return redirect('about')
         else:
             messages.warning(request,"Username or Password is incorrect!!")
-
+            pass
     return render(request, 'login.html')
 
  
-def logout(request):
-    User=authenticate
-    logout(request,User)
+def logout_view(request):
+    # User=authenticate
+    logout(request)
     return render(request, 'homepage.html')
 
 
